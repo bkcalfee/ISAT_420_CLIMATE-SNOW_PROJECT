@@ -1,178 +1,71 @@
 # Dataset Description Draft
 
-This draft summarizes what is already supported by the local project files and session handoff for the climate-snow project, and it flags the source details that still need to be confirmed before this becomes final report text.
+This project uses three dataset groups: a short local Massanutten station record, Daymet point data for Massanutten and Harrisonburg, and a long-term NOAA station record from Dale Enterprise, Virginia.
 
-## Datasets Used
+## Local Massanutten Station
 
-This project currently uses three main dataset groups:
-
-1. A short local observed Massanutten station record
-2. Two Daymet point datasets for Massanutten and Harrisonburg
-3. A long-term NOAA station dataset from Dale Enterprise, Virginia, used as a snowfall proxy
-
-## 1. Local Observed Massanutten Station Dataset
-
-Local file:
+Project file:
 - `Data/2016-2026 22840 Daily.csv`
 
-What the dataset covers:
-- This file contains daily observations for `MASSANUTTEN 1.3 SE, VA US`
-- Based on the file contents currently in the repo, the record begins on `2016-02-05`
-- The session handoff describes this as a short local record covering roughly `2016-2026`
+GitHub location:
+- `https://github.com/bkcalfee/ISAT_420_CLIMATE-SNOW_PROJECT/blob/main/Data/2016-2026%2022840%20Daily.csv`
 
-Variables involved:
-- `STATION`
-- `NAME`
-- `DATE`
-- `DAPR`
-- `MDPR`
-- `PRCP`
-- `SNOW`
-- `SNWD`
+Current draft:
+- This dataset is the short local observation record for `MASSANUTTEN 1.3 SE, VA US`.
+- The file begins on `2016-02-05`, and the project has treated it as a recent record covering roughly `2016-2026`.
+- Variables in the CSV include `DATE`, `PRCP`, `SNOW`, and `SNWD`, along with station metadata fields.
+- The station id in the file is `US1VARH0011`.
+- The `US1` station-id prefix is used for CoCoRaHS stations included in GHCN-Daily, which suggests this record is a volunteer observer station record distributed through the NOAA daily summaries system.
+- The file format is CSV with one row per day.
+- In the project, this dataset is used to represent recent on-the-ground snowfall and precipitation conditions at Massanutten.
+- Its main limitation is that the record is too short for strong long-term climate trend analysis by itself.
 
-How the dataset was collected:
-- Based on the file structure and station-style fields, this appears to be direct local station observation data rather than a modeled or reanalysis product
-- It is being treated in the project as the on-the-ground observed record for recent Massanutten conditions
 
-Format:
-- CSV table with one row per day
+## Daymet Point Data
 
-How this dataset relates to the project issue:
-- This dataset provides the most local and direct evidence of recent snowfall and precipitation conditions near Massanutten
-- It is useful for showing what has happened on the ground in the recent period
-- Its main limitation is that the time span is too short for strong long-term climate trend analysis by itself
-
-What still needs to be confirmed:
-- The exact download source or portal used to obtain this CSV
-- Whether this file came directly from NOAA or from another station-data interface
-- A persistent identifier or source URL, if one exists
-- The exact meaning of the `DAPR` and `MDPR` fields for the report text
-
-## 2. Daymet Point Datasets
-
-Local files:
+Project files:
 - `Data/daymet_massanutten.csv`
 - `Data/daymet_harrisonburg.csv`
 
-What the datasets cover:
-- These files provide daily Daymet point data for two locations used in the project:
-- Massanutten:
-  - latitude `38.4062`
-  - longitude `-78.7378`
-  - elevation `509 meters`
-- Harrisonburg:
-  - latitude `38.4496`
-  - longitude `-78.8689`
-  - elevation `421 meters`
-- The files indicate `All years; all variables; Daymet Software Version 4.0`
-- The session handoff states that these point files cover roughly `1980-2024`
+GitHub locations:
+- `https://github.com/bkcalfee/ISAT_420_CLIMATE-SNOW_PROJECT/blob/main/Data/daymet_massanutten.csv`
+- `https://github.com/bkcalfee/ISAT_420_CLIMATE-SNOW_PROJECT/blob/main/Data/daymet_harrisonburg.csv`
 
-Variables involved:
-- `year`
-- `yday`
-- `prcp (mm/day)`
-- `swe (kg/m^2)`
-- `tmax (deg c)`
-- `tmin (deg c)`
+Current draft:
+- These files provide daily Daymet point data for Massanutten and Harrisonburg.
+- The Massanutten file header lists latitude `38.4062`, longitude `-78.7378`, and elevation `509 meters`.
+- The Harrisonburg file header lists latitude `38.4496`, longitude `-78.8689`, and elevation `421 meters`.
+- These files are point extracts from `Daymet: Daily Surface Weather Data on a 1-km Grid for North America, Version 4 R1`.
+- For continental North America, the official temporal coverage is `1980-2024`, which matches the project use of these files as the longer climate-context datasets.
+- The full Daymet daily product includes `tmin`, `tmax`, `prcp`, `srad`, `vp`, `swe`, and `dayl`.
+- The local point files used in this project include `year`, `yday`, `prcp (mm/day)`, `swe (kg/m^2)`, `tmax (deg c)`, and `tmin (deg c)`.
+- ORNL DAAC states that Daymet provides long-term, continuous gridded estimates by interpolating and extrapolating ground-based observations through statistical modeling techniques.
+- In the project, these datasets are used to compare mountain versus valley climate and to compare Daymet against the short observed Massanutten record during the overlap period.
 
-Background and collection method:
-- Daymet is a gridded daily surface weather product for North America
-- In this project, the local files are point extractions rather than full gridded rasters
-- Daymet should be described as a modeled/interpolated gridded climate dataset derived from observations, not as a pure direct station record
-- The exact formal wording for how Daymet is generated still needs to be checked from the official documentation before finalizing the report
 
-Format:
-- CSV files with metadata header lines followed by daily tabular data
 
-Persistent identifier already available in the file header:
-- DOI: `https://doi.org/10.3334/ORNLDAAC/2129`
+## NOAA Dale Enterprise Station
 
-How these datasets relate to the project issue:
-- These datasets provide the longer climate context that the short local Massanutten record cannot provide on its own
-- They allow comparison between a mountain location and a nearby valley location
-- They are being used to compare precipitation and temperature conditions between Massanutten and Harrisonburg
-- They are also being used to evaluate how well Daymet agrees with the short observed Massanutten station record during the overlap period
-
-What still needs to be confirmed:
-- The exact download steps or URL used to obtain these point files
-- Whether they were downloaded through the Daymet website, ORNL DAAC tools, NASA Earthdata search, or another interface
-- The final report wording for how Daymet data are produced and quality-controlled
-
-## 3. NOAA Dale Enterprise Daily Dataset
-
-Local file:
+Project file:
 - `Data/NOAA_DALE_ENTERPRISE_daily.csv`
 
-What the dataset covers:
-- This file contains daily data for:
-- station id `USC00442208`
-- station name `DALE ENTERPRISE, VA US`
-- latitude `38.4547`
-- longitude `-78.9352`
-- elevation `413.9`
-- The file in the repo begins on `1893-01-01`
-- The session handoff states that this station provides the long-term proxy record used for snowfall and temperature analysis
+GitHub location:
+- `https://github.com/bkcalfee/ISAT_420_CLIMATE-SNOW_PROJECT/blob/main/Data/NOAA_DALE_ENTERPRISE_daily.csv`
 
-Variables involved:
-- `STATION`
-- `NAME`
-- `LATITUDE`
-- `LONGITUDE`
-- `ELEVATION`
-- `DATE`
-- `DAPR`
-- `MDPR`
-- `PRCP`
-- `SNOW`
-- `SNWD`
-- `TMAX`
-- `TMIN`
-- `TOBS`
+Current draft:
+- This dataset is the long-term proxy record used for snowfall and temperature analysis.
+- The file is for station `USC00442208`, `DALE ENTERPRISE, VA US`.
+- The header lists latitude `38.4547`, longitude `-78.9352`, and elevation `413.9`.
+- The local file begins on `1893-01-01`.
+- Variables include `PRCP`, `SNOW`, `SNWD`, `TMAX`, `TMIN`, and `TOBS`, along with station metadata fields.
+- This means the Dale Enterprise file can be described as NOAA Climate Data Online daily station data from the GHCN-Daily dataset rather than as a modeled product.
+- The file format is CSV with one row per day.
+- In the project, this dataset is used because the local Massanutten record is too short for long-term snowfall trend analysis.
 
-How the dataset was collected:
-- This appears to be a direct station observation dataset rather than a modeled product
-- In the project, it is being used as a long-term proxy because the local Massanutten record is too short to study long snowfall trends
 
-Format:
-- CSV table with one row per day
+## Short Summary
 
-How this dataset relates to the project issue:
-- This dataset makes it possible to analyze long-term snowfall and winter temperature relationships back into the late 19th century
-- It supports the part of the project focused on long-term snowfall trends and the connection between snowfall and temperature
-- The session handoff notes that earlier analysis from this station showed:
-- annual snowfall trend is negative
-- winter snowfall trend is negative
-- snowfall is negatively correlated with warmer winter temperatures
+- The local Massanutten station file provides recent local observations.
+- The Daymet point files provide longer-term mountain-versus-valley climate context.
+- The Dale Enterprise NOAA file provides the long time span needed for snowfall trend analysis.
 
-What still needs to be confirmed:
-- The exact NOAA source page or API used to download the file
-- Whether the station record came from NOAA Climate Data Online, GHCN-Daily, or another NOAA access point
-- A formal persistent identifier for the dataset, if one exists beyond the station id
-- The exact unit conventions for each variable as downloaded, so the report can state them accurately
-
-## Working Summary
-
-What is already well supported by local files:
-- Dataset names and local file paths
-- Basic time coverage
-- Core variables
-- File formats
-- The Daymet DOI
-- The role each dataset plays in the project
-
-What still needs outside-source confirmation before this is final:
-- Exact download locations and retrieval steps
-- Official background wording on how Daymet was produced
-- Official background wording on the NOAA/local station data sources
-- Persistent source links for the NOAA and Massanutten station files
-- Unit definitions and field definitions for all NOAA-style variables
-
-## Likely Final Framing For The Report
-
-The report will likely describe the dataset strategy as follows:
-
-- The short Massanutten station record provides recent on-the-ground observations
-- The Daymet point datasets provide longer-term local climate context and valley-versus-mountain comparison
-- The Dale Enterprise NOAA record provides the long time span needed for snowfall trend analysis
-
-This structure matches the current workflow notebook and the prior project analysis.
