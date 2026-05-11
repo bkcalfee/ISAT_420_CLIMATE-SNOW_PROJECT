@@ -12,10 +12,12 @@ To explore the effect warming winter temperatures have on snow, we created three
 1. How has snowfall at Massanutten changed over time?
 2. How does snowfall change over time correlate with temperature change?
 3. How has the number of days of snowfall per year changed over time?
+
 To understand the effect of global warming on snowfall, we are looking at the local impact at a ski resort that is close to us versus a broader view of the issue. Because the scope of the project is smaller than all US ski areas, the project is localized and focused on giving a good understanding of one area. The core mechanism of the issue is global warming, so we want to see the direct correlation between temperature and snowfall. The number of days with snowfall is important because it shows how much strain the lack of snowfall is putting on the ski areas.
 Data and Methods
 To address the research questions, multiple climate and snowfall datasets were analyzed to examine long-term temperature and snowfall trends in the Harrisonburg and Massanutten region.
-Datasets:
+
+## Datasets:
 1. Local Massanutten Station
 This dataset is a short-term, local observation record for Massanutten covering the period from 2016 through 2026. The station ID is: US1VARH0011, indicating that this record is likely a volunteer observer station record distributed through the NOAA daily summaries system. 
 The dataset is a CSV file and formatted with one row per day, covering variables including: DATE, PRCP, SNOW, and SNWD, along with station metadata fields. 
