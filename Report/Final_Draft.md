@@ -29,7 +29,7 @@ In this study, this data is used as recent snowfall observations at the specific
   The second dataset used was the Daymet Version 4 R1 gridded climate dataset produced by the Oak Ridge National Laboratory. Daymet provides daily climate estimates on a 1-km grid across North America.
 Variables used in this study included: year, yday, prcp (mm/day), swe (kg/m²), tmax (°C), tmin (°C)
 The Daymet dataset was used to analyze long-term climate conditions between 1980 and 2024 for both valley and mountain locations near Harrisonburg and Massanutten. Because the Daymet dataset spans multiple decades, it was used to extend climate analysis beyond the shorter local observation record.
-[Daymet Dataset] (link : https://daac.ornl.gov/DAYMET/guides/Daymet_Daily_V4.html)
+[Daymet Dataset](https://daac.ornl.gov/DAYMET/guides/Daymet_Daily_V4.html)
 
 3. NOAA Dale Enterprise Station Dataset
 
