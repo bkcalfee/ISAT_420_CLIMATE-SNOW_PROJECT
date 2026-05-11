@@ -22,12 +22,12 @@ To address the research questions, multiple climate and snowfall datasets were a
 This dataset is a short-term, local observation record for Massanutten covering the period from 2016 through 2026. The station ID is: US1VARH0011, indicating that this record is likely a volunteer observer station record distributed through the NOAA daily summaries system. 
 The dataset is a CSV file and formatted with one row per day, covering variables including: DATE, PRCP, SNOW, and SNWD, along with station metadata fields. 
 In this study, this data is used as recent snowfall observations at the specific location we are looking at. The dataset shows the current snowfall and precipitation conditions at Massanutten. While this dataset is specific to the location of study, it lacks the length of data necessary in order to assess change of snowfall over time. 
-2. Daymet point data
+3. Daymet point data
 The second dataset used was the Daymet Version 4 R1 gridded climate dataset produced by the Oak Ridge National Laboratory. Daymet provides daily climate estimates on a 1-km grid across North America.
 Variables used in this study included: year, yday, prcp (mm/day), swe (kg/m²), tmax (°C), tmin (°C)
 The Daymet dataset was used to analyze long-term climate conditions between 1980 and 2024 for both valley and mountain locations near Harrisonburg and Massanutten. Because the Daymet dataset spans multiple decades, it was used to extend climate analysis beyond the shorter local observation record.
 [Daymet Dataset](link : https://daac.ornl.gov/DAYMET/guides/Daymet_Daily_V4.html)
-3. NOAA Dale Enterprise Station Dataset
+4. NOAA Dale Enterprise Station Dataset
 A third dataset was obtained from the National Oceanic and Atmospheric Administration Climate Data Online archive. Data from the Dale Enterprise station served as a long-term regional proxy for snowfall and winter temperature trends. This dataset spans from 1893 through 2026, providing over 130 years of climate observations. This dataset enabled multi-decade trend analysis of snowfall and winter temperature changes in the region.
 
 ## Data Processing
